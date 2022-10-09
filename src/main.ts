@@ -3,10 +3,21 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
+import { API_URL, Settings } from './app/shared/settings';
 
 if (environment.production) {
   enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.error(err));
+async function loadSettings(): Promise<Settings> {
+  const response = await fetch('assets/settings.json');
+  return response.json();
+}
+
+loadSettings().then(settings => {
+  platformBrowserDynamic([
+    { provide: API_URL, useValue: settings.apiUrl }
+  ])
+    .bootstrapModule(AppModule)
+    .catch(err => console.error(err));
+});

@@ -7,7 +7,10 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "docker:build": "docker build -t book-monkey .",
+    "docker:build:silicon": "npm run docker:build -- --platform=linux/amd64",
+    "docker:redeploy": "docker-compose down --remove-orphans && docker-compose up -d"
   },
   "private": true,
   "dependencies": {

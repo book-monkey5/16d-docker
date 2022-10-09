@@ -1,0 +1,8 @@
+.editorconfig
+.git
+.gitignore
+.vscode
+README.md
+coverage
+dist
+node_modules
