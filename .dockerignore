@@ -2,6 +2,7 @@
 .git
 .gitignore
 .vscode
+.angular
 README.md
 coverage
 dist
