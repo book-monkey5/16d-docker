@@ -1,5 +1,5 @@
 # Stage 1: Anwendung bauen
-FROM node:16 as buildcontainer
+FROM node:18 as buildcontainer
 WORKDIR /usr/src/app
 COPY . ./
 RUN npm install

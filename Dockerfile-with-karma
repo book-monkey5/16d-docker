@@ -1,7 +1,7 @@
 # Ansatz: Karma im Docker-Container ausführen
 
 # Stage 1: Anwendung bauen
-FROM node:16-buster as buildcontainer
+FROM node:18-buster as buildcontainer
 # Google Chrome installieren
 RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
     && sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list' \
