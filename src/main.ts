@@ -1,13 +1,7 @@
-import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { AppModule } from './app/app.module';
-import { environment } from './environments/environment';
 import { API_URL, Settings } from './app/shared/settings';
-
-if (environment.production) {
-  enableProdMode();
-}
 
 async function loadSettings(): Promise<Settings> {
   const response = await fetch('assets/settings.json');
