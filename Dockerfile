@@ -9,4 +9,4 @@ RUN npm run build
 FROM nginx
 LABEL maintainer="Ihr Name <you@your.domain>"
 COPY nginx/default.conf /etc/nginx/conf.d
-COPY --from=buildcontainer /usr/src/app/dist/book-monkey /usr/share/nginx/html
+COPY --from=buildcontainer /usr/src/app/dist/book-monkey/browser /usr/share/nginx/html
